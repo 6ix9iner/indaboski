@@ -1,3 +1,13 @@
+import subprocess
+import sys
+
+# Check and install joblib if not present
+try:
+    import joblib
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "joblib"])
+    import joblib
+    
 import streamlit as st
 import pandas as pd
 import joblib
